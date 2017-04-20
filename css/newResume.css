@@ -1,0 +1,31 @@
+body{
+    background-color: #DAE3E7;
+}
+
+header{
+    background-color: #ccc;
+}
+
+header img{
+    margin-right: 2em;
+    display: block;
+}
+
+header li a{
+    color: #aaa;
+}
+
+header a:hover{
+    color: #888;
+    text-decoration: none;
+}
+
+header a.btn{
+    margin-top: 4em;
+}
+
+.section{
+    background-color: #fff;
+    margin: 2em 0;
+    padding: 2em 1em;
+}
