@@ -28,6 +28,8 @@
     <!-- Bootstrap JS-->
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
 
+    <script src="js/newResume.js"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -51,8 +53,8 @@
 </nav>
     <header class="jumbotron" style="margin-top: 50px;">
         <div class="container">
-            <img src="images/Jacey-lg.jpg" alt="JaceyKan" class="img-responsive img-circle pull-left">
-            <div class="pull-left">
+            <img src="images/Jacey-lg.jpg" alt="JaceyKan" class="img-responsive img-circle">
+            <div id="myLinks">
                 <h1>
                     Jacey Kan<br>
                     <small>前端开发</small>
@@ -63,7 +65,7 @@
                     <li><a href=""><span class="fa fa-rss-square fa-2x"></span></a></li>
                 </ul>
             </div>
-            <a href="mailto: jacey_kan@sina.com" class="btn btn-lg btn-success pull-right"><span class="fa fa-paper-plane"></span>&nbsp;&nbsp;CTONTACT ME</a>
+            <a id="contactMe" href="mailto: jacey_kan@sina.com" class="btn btn-lg btn-success"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;CTONTACT ME</a>
         </div>
     </header>
     <div class="container">
@@ -71,29 +73,31 @@
             <div class="col-sm-8">
                 <div id="aboutMe" class="section">
                     <h2>自我介绍</h2>
-                    <p>Write a brief intro about yourself. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</p>
+                    <p>2015年5月在家人安排的“稳定单位”工作了三年，终于毅然决定辞职。那三年画图画到抑郁，扯皮扯到心累，如果不开心，这样终其一生，就算可以挡风遮雨，又有什么意思。年纪轻轻却活得像退休一样，我不甘心。罗曼.罗兰说：有些人二十岁就死了，等到八十岁才被埋葬。我不想在还没活着时就已经死去。</p>
+                    <p>在朋友内推下我做起测试工作，在工作中我知道了前端开发。在我看来编程是件特别酷的事，我开始自学前端技术。把无形的思想转化成有形的存在这样一个过程充满着乐趣！但愿自己刚刚开启的程序人生能够无关风月，寂静欢喜。</p>
                 </div>
                 <div id="latestProjects" class="section">
-                    <h2>近期作品</h2>
-                    <div class="Project">
-                        <h3><a href="#">KickStarter - Velocity</a></h3>
-                        <img src="images/Jacey.jpg" class="img-responsive">
-                        <p>You can promote your main project here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
+                    <h2>近期作品 - <small><a href="https://jaceykan.github.io/practice/" target="_blank">查看更多</a></small></h2>
+                    <div id="mainProject" class="project">
+                        <h3><a href="https://jaceykan.github.io/practice/barrage.html">弹幕墙</a><br><small>结合野狗云后端制做的弹幕小程序，来和我说句话吧！</small></h3>
+                        <a href="https://jaceykan.github.io/practice/barrage.html" target="_blank"><img src="images/latestProjects/barrage.png" class="img-responsive"></a>
                     </div>
-                    <div class="Project">
+                    <div class="project">
                         <div class="row">
-                            <div class="col-sm-5"><img src="images/Jacey.jpg" class="img-responsive"></div>
+                            <div class="col-sm-5">
+                                <a href="https://jaceykan.github.io/practice/XinTianJie.html" target="_blank"><img src="images/latestProjects/xintianjie.png" class="img-responsive"></a>
+                            </div>
                             <div class="col-sm-7">
-                                <h3><a href="#">Atom - Designed for Mobile Apps</a></h3>
-                                <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
+                                <h3><a href="https://jaceykan.github.io/practice/XinTianJie.html" target="_blank">新天杰股份有限公司</a></h3>
+                                <p>根据PSD图制作的企业网站</p>
                             </div>
                         </div>
                     </div>
-                    <div class="Project">
+                    <div class="project">
                         <div class="row">
                             <div class="col-sm-5"><img src="images/Jacey.jpg" class="img-responsive"></div>
                             <div class="col-sm-7">
-                                <h3>Atom - Designed for Mobile Apps</h3>
+                                <h3><a href="#" target="_blank">Atom - Designed for Mobile Apps</a></h3>
                                 <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
                             </div>
                         </div>
@@ -102,12 +106,17 @@
                 <div id="workExperience" class="section">
                     <h2>工作经历</h2>
                     <div class="experience">
-                        <h3>测试工程师 - <small>托普网络(2015-2016)</small></h3>
-                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
+                        <h3>测试工程师 - <small>河南拓普计算机网络工程有限公司(2015-2016)</small></h3>
+                        <ul>
+                            <li>参与项目前期研讨、编写测试设计、搭建测试环境、进行功能测试、系统测试、编写用户操作手册、协助解决客户所提问题报告单</li>
+                            <li>参与的项目有：郑州市网络商品交易监管系统、企业公示抽查系统、南宁市天眼系统</li>
+                        </ul>
                     </div>
                     <div class="experience">
                         <h3>通信工程师 - <small>河南省信息咨询设计研究有限公司(2012-2015)</small></h3>
-                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
+                        <ul>
+                            <li>勘察、CAD制图、做工程预算，与客户协调项目中出现的各种问题</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -155,5 +164,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

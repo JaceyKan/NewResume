@@ -1,5 +1,7 @@
 body{
     background-color: #DAE3E7;
+    font-size: 16px;
+    line-height: 1.7em;
 }
 
 header{
@@ -7,8 +9,8 @@ header{
 }
 
 header img{
-    margin-right: 2em;
     display: block;
+    margin: 0 auto;
 }
 
 header li a{
@@ -20,12 +22,77 @@ header a:hover{
     text-decoration: none;
 }
 
-header a.btn{
-    margin-top: 4em;
-}
-
 .section{
     background-color: #fff;
     margin: 2em 0;
     padding: 2em 1em;
+}
+
+#aboutMe p{
+    text-indent: 2em;
+}
+
+.project{
+    margin: 1em;
+    padding: 1em;
+}
+
+.project h3 a{
+    color: #778492;
+}
+
+.project img{
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.5em;
+}
+
+.project img:hover{
+    opacity: 0.7;
+}
+
+#mainProject h3{
+    text-align: center;
+    line-height: 1.5em;
+}
+
+#mainProject{
+    border-bottom: 1px solid #ccc;
+}
+
+#gotoTop{
+    display: none;
+    position: fixed;
+    top: 75%;
+    right: 1em;
+    cursor: pointer;
+    padding: 9px 4px;
+    background-color: #fff;
+}
+
+#gotoTop:hover{
+    background-color: #5cb542;
+    color: #fff;
+}
+
+@media (max-width: 767px){
+    header{
+        text-align: center;
+    }
+}
+
+/*devices width more than 768px*/
+@media (min-width: 768px){
+    header img{
+        float: left;
+        margin-right: 2em;
+    }
+    header #myLinks{
+        float: left;
+    }
+
+    header #contactMe{
+        float: right;
+        margin-top: 4em;
+    }
 }
